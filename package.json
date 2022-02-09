@@ -5,6 +5,9 @@
   "repository": "git@github.com:verissimo-sn/deliveryman.git",
   "author": "verissimo-sn <jose.neto@minu.co>",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+  },
   "devDependencies": {
     "@types/express": "^4.17.13",
     "prisma": "^3.9.1",
