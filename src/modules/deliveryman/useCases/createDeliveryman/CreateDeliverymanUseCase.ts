@@ -2,13 +2,13 @@ import { Deliveryman } from "@prisma/client";
 import { hash } from "bcrypt";
 import { prismaClient } from "../../../../database/prismaClient";
 
-interface ICreateDeliveryMan {
+interface ICreateDeliveryman {
   username: string;
   password: string;
 }
 
 export class CreateDeliverymanUseCase {
-  async execute({ username, password }: ICreateDeliveryMan): Promise<Deliveryman> {
+  async execute({ username, password }: ICreateDeliveryman): Promise<Deliveryman> {
     const deliverymanExists = await prismaClient.deliveryman.findFirst({
       where: {
         username: {
@@ -25,13 +25,13 @@ export class CreateDeliverymanUseCase {
     const salt = 10;
     const hashPassword = await hash(password, salt);
 
-    const newDeliveryMan = await prismaClient.deliveryman.create({
+    const newDeliveryman = await prismaClient.deliveryman.create({
       data: {
         username,
         password: hashPassword
       }
     });
 
-    return newDeliveryMan;
+    return newDeliveryman;
   }
 }
