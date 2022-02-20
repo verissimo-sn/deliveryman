@@ -1,0 +1,5 @@
+@deliverymanToken=bearerToken
+
+GET http://localhost:3000/delivery/deliveryman
+content-type: application/json
+Authorization: : {{deliverymanToken}}

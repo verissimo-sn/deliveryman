@@ -1,0 +1,17 @@
+POST http://localhost:3000/clients/auth
+content-type: application/json
+
+{
+  "username": "string",
+  "password": "any"
+}
+
+###
+
+POST http://localhost:3000/deliveryman/auth
+content-type: application/json
+
+{
+  "username": "string",
+  "password": "asny"
+}

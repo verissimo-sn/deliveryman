@@ -1,0 +1,6 @@
+@deliverymanToken=bearerToken
+@id=uuid
+
+PATCH http://localhost:3000/delivery/updateEndDate/{{id}}
+content-type: application/json
+Authorization: : {{deliverymanToken}}

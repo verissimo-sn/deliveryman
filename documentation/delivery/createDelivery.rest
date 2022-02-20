@@ -1,0 +1,9 @@
+@clientToken=bearerToken
+
+POST http://localhost:3000/delivery
+content-type: application/json
+Authorization: : {{clientToken}}
+
+{
+  "item_name": "string"
+}

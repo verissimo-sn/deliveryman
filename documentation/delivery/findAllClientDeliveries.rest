@@ -1,0 +1,5 @@
+@clientToken=bearerToken
+
+GET http://localhost:3000/delivery/client
+content-type: application/json
+Authorization: : {{clientToken}}

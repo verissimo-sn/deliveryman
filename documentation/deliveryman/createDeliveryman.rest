@@ -1,0 +1,7 @@
+POST http://localhost:3000/deliveryman
+content-type: application/json
+
+{
+  "username": "string",
+  "password": "any"
+}
