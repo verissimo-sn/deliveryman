@@ -2,15 +2,15 @@ import { Clients, Deliveries } from "@prisma/client";
 import { prismaClient } from "../../../../database/prismaClient";
 
 
-interface IClientDeliveriesResponse {
+interface IResponse {
   id: string;
   deliveries: Deliveries[];
   username: string;
 }
 
 export class FindAllClientDeliveriesUseCase {
-  async execute(id_client: string,): Promise<IClientDeliveriesResponse[]> {
-    return prismaClient.clients.findMany({
+  async execute(id_client: string,): Promise<IResponse | null> {
+    return prismaClient.clients.findFirst({
       where: {
         id: id_client
       },
