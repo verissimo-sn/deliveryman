@@ -30,7 +30,7 @@ export class AuthenticateDeliverymanUseCase {
       username
     }
 
-    const token = sign(payload, 'secret', {
+    const token = sign(payload, 'secretDeliveryman', {
       subject: deliveryman.id,
       expiresIn: '1d',
     });
