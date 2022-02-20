@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { ensureAuthenticateClient } from '../middlewares/ensureAuthenticateClient';
+import { ensureAuthenticateDeliveryman } from '../middlewares/ensureAuthenticateDeliveryman';
 import { CreateDeliveryController } from '../modules/deliveries/useCases/createDelivery/CreateDeliveryController';
 import { FindAllAvailableController } from '../modules/deliveries/useCases/findAllAvailable/FindAllAvailableController';
 
@@ -9,7 +10,7 @@ const createDeliveryController = new CreateDeliveryController();
 const findAllAvailableController = new FindAllAvailableController();
 
 deliveryRoutes.post('/', ensureAuthenticateClient, createDeliveryController.handle);
-deliveryRoutes.get('/available', findAllAvailableController.handle);
+deliveryRoutes.get('/available', ensureAuthenticateDeliveryman, findAllAvailableController.handle);
 
 export { deliveryRoutes }
 
